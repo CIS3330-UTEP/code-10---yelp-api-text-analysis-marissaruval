@@ -1,0 +1,29 @@
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!It's that good.We had a multitude of things, the most mind blowing being the sweet potatoes."
+"Man, oh man, the food was Good! Found this place in Yelp and had great reviews and I was downtown so I gave it a try. I sure am glad that I did! Got here..."
+"Good atmosphere, good food, vegan options. Cons: the aguachile was not good and the tostada that it came with was hard and stale. And good luck with parking..."
+
+
+for review in reviews:
+    tokens = nltk.word_tokenize(review)
+    pos_tags = nltk.pos_tag(tokens)
+    print(pos_tags)
+
+    new_text = []
+    for tag in pos_tags:
+        if tag[0] =="JJ" or tag[1] =="JJS":
+            print(tag[0])
+
+    #STOPWORDS
+    for tokens in pos_tags:
+        if tag[0] not in stopwords:
+            print(tag[0])
+            print(tag)
+            new_text.append(tag[0])
+    print("\noriginal")
+    print(review)
+    print("\nnew")     
+    print()   
+
+
+
+stop_words = set(stopwords.words('english'))
